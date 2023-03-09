@@ -208,10 +208,7 @@ public class  ApplianceService {
         Optional<Attributes> attr=attributesRepository.findById(id);
         if(attr.isPresent()){
             return  new ResponseEntity<>(attr.get(),HttpStatus.OK);
-
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-
 }
