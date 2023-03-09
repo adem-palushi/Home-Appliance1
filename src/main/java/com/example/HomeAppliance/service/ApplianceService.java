@@ -69,8 +69,6 @@ public class  ApplianceService {
 
 
 
-
-
     public List<Appliance> convertApplianceDtoToAppliance(ApplianceDto appliance) {
         System.out.println("sadasdasdasdas"+appliance.getType());
         Appliance appliance1 = new Appliance();
@@ -108,15 +106,10 @@ public class  ApplianceService {
             addAttr(attr);
             attributesList.add(attr);
         });
-
-
-
         appliance1.setAttributes(attributesList);
           addApliance(appliance1);
         return getAll();
     }
-
-
 
 
     public List<Appliance> changeStatus(String id) {
@@ -139,12 +132,10 @@ public class  ApplianceService {
 
 
 
-
     public List<Appliance> getAll() {
         List<Appliance> listApp=repository.findAll();
         return listApp;
     }
-
 
 
     public List<Appliance> increaseV(String id) {
@@ -176,8 +167,6 @@ public class  ApplianceService {
 
 
 
-
-
     public List<Appliance> decreaseV(String id) {
         Optional<Attributes> attr=attributesRepository.findById(id);
         int newValue=attr.get().getCurrent()-1;
@@ -200,8 +189,6 @@ public class  ApplianceService {
         repository.save(appliance);
         return repository.findAll();
     }
-
-
 
 
     public ResponseEntity<Attributes> findAttr(String id) {
